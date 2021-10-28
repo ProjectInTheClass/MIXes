@@ -15,6 +15,7 @@
 		99561B2027298A72007E8150 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99561B1F27298A72007E8150 /* HomeViewController.swift */; };
 		99561B2427298B3C007E8150 /* LibaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99561B2327298B3C007E8150 /* LibaryViewController.swift */; };
 		99561B2C2729A1EA007E8150 /* MainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99561B2B2729A1EA007E8150 /* MainCell.swift */; };
+		99B7D145272AF3FF0053C09D /* LibaryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B7D144272AF3FF0053C09D /* LibaryCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		99561B1F27298A72007E8150 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		99561B2327298B3C007E8150 /* LibaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibaryViewController.swift; sourceTree = "<group>"; };
 		99561B2B2729A1EA007E8150 /* MainCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCell.swift; sourceTree = "<group>"; };
+		99B7D144272AF3FF0053C09D /* LibaryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibaryCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 				66D00005271170D4004297F1 /* Info.plist */,
 				99561B1F27298A72007E8150 /* HomeViewController.swift */,
 				99561B2B2729A1EA007E8150 /* MainCell.swift */,
+				99B7D144272AF3FF0053C09D /* LibaryCell.swift */,
 			);
 			path = MIXes;
 			sourceTree = "<group>";
@@ -143,6 +146,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				99B7D145272AF3FF0053C09D /* LibaryCell.swift in Sources */,
 				66D0FFF8271170C7004297F1 /* AppDelegate.swift in Sources */,
 				66D0FFFA271170C7004297F1 /* SceneDelegate.swift in Sources */,
 				99561B2027298A72007E8150 /* HomeViewController.swift in Sources */,
@@ -296,6 +300,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = MIXes/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -314,6 +319,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = MIXes/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
