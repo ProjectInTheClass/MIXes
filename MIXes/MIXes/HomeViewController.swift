@@ -16,6 +16,7 @@ class HomeViewController: UIViewController {
     let cellItem:Array<String> = ["딸기향","포도향","레몬향"]
     let cellPercent:Array<String> = ["50%","30%","20%"]
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         print("hello ios")
@@ -25,6 +26,7 @@ class HomeViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
+    
     
 
     /*
