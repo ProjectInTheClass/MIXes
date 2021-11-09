@@ -8,6 +8,7 @@
 import UIKit
 
 class MainCell: UITableViewCell {
+    
 
     @IBOutlet weak var itemName_custom: UILabel!
     @IBOutlet weak var itemPercent_custom: UILabel!
