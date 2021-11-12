@@ -1,16 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="eGW-fB-0Lb">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="eGW-fB-0Lb">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
-        <capability name="Named colors" minToolsVersion="9.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Home-->
+        <!--Home View Controller-->
         <scene sceneID="Ive-a2-XKX">
             <objects>
                 <viewController id="a3H-QD-aPv" customClass="HomeViewController" customModule="MIXes" customModuleProvider="target" sceneMemberID="viewController">
@@ -21,7 +19,13 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XTh-SM-bCv">
                                 <rect key="frame" x="321.33333333333331" y="44" width="72.666666666666686" height="31"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="추가하기"/>
+                                <buttonConfiguration key="configuration" style="plain" title="추가하기">
+                                    <color key="baseForegroundColor" red="0.74117647060000003" green="0.8980392157" blue="0.4549019608" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="addCellButton:" destination="a3H-QD-aPv" eventType="touchUpInside" id="avH-sB-fV3"/>
+                                    <segue destination="w3C-Os-459" kind="modal" id="NTR-fV-clr"/>
+                                </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="bq4-bD-fD2">
                                 <rect key="frame" x="0.0" y="82" width="414" height="680"/>
@@ -65,8 +69,8 @@
                                 </prototypes>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="원료 배합" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ltu-95-ZhG">
-                                <rect key="frame" x="175" y="44" width="64" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="175.66666666666666" y="44" width="63" height="21"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -93,14 +97,50 @@
                             <constraint firstItem="XTh-SM-bCv" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Ltu-95-ZhG" secondAttribute="trailing" constant="8" symbolic="YES" id="uCl-pu-yMi"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Home" image="homekit" catalog="system" id="W5U-oy-Ou1"/>
+                    <navigationItem key="navigationItem" id="h0M-CB-UoC"/>
                     <connections>
                         <outlet property="mainTableView_custom" destination="bq4-bD-fD2" id="Vr4-ty-Fjb"/>
+                        <outlet property="meterialTable" destination="bq4-bD-fD2" id="q4n-1P-KEe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gMa-Wn-oZR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2163.768115942029" y="-500.22321428571428"/>
+            <point key="canvasLocation" x="3939.130434782609" y="-503.57142857142856"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="iw5-wL-uM4">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DbA-Ls-uXB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <viewController id="w3C-Os-459" customClass="ViewController" customModule="MIXes" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="RCz-dN-A8R">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TMr-gU-lDb">
+                                <rect key="frame" x="20" y="30" width="49" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="닫기">
+                                    <color key="baseForegroundColor" red="0.74117647060000003" green="0.8980392157" blue="0.4549019608" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="exitButton:" destination="w3C-Os-459" eventType="touchUpInside" id="w7u-HK-Omg"/>
+                                    <action selector="modalExitButton:" destination="w3C-Os-459" eventType="touchUpInside" id="EPH-23-a0e"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="zdZ-d0-SAc"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="TMr-gU-lDb" firstAttribute="leading" secondItem="zdZ-d0-SAc" secondAttribute="leading" constant="20" id="fvj-6z-Olp"/>
+                            <constraint firstItem="TMr-gU-lDb" firstAttribute="top" secondItem="zdZ-d0-SAc" secondAttribute="top" constant="30" id="hFZ-BX-NtF"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="fff" destination="TMr-gU-lDb" id="B4u-UQ-cZg"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="4828.985507246377" y="-504.24107142857139"/>
         </scene>
         <!--Libary-->
         <scene sceneID="BfH-pn-1Em">
@@ -212,13 +252,31 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="a3H-QD-aPv" kind="relationship" relationship="viewControllers" id="XBh-oi-8es"/>
+                        <segue destination="7QA-JA-xkg" kind="relationship" relationship="viewControllers" id="XBh-oi-8es"/>
                         <segue destination="grr-1w-1zY" kind="relationship" relationship="viewControllers" id="gDf-Rq-kLu"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oBT-pJ-b60" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1250.7246376811595" y="-158.03571428571428"/>
+        </scene>
+        <!--Home-->
+        <scene sceneID="kvf-fl-HRS">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="7QA-JA-xkg" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Home" image="homekit" catalog="system" id="W5U-oy-Ou1"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="3yL-0J-ll0">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="a3H-QD-aPv" kind="relationship" relationship="rootViewController" id="gCP-6a-bD5"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vta-9R-te2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3028.985507246377" y="-503.57142857142856"/>
         </scene>
     </scenes>
     <color key="tintColor" systemColor="opaqueSeparatorColor"/>

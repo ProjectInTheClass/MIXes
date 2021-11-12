@@ -17,7 +17,10 @@ class  meterialData {
     static let shared = meterialData()
     
     var meterial: [Meterial] = [
-        Meterial(meterialName: "딸기향", meterialIndex: 1, meterialPercent: 20.5)
+        Meterial(meterialName: "딸기향", meterialIndex: 1, meterialPercent: 20.5),
+        Meterial(meterialName: "딸기향", meterialIndex: 1, meterialPercent: 20.5),
+        Meterial(meterialName: "딸기향", meterialIndex: 1, meterialPercent: 20.5),
     ]
 }
+
 

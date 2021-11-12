@@ -8,15 +8,9 @@
 import UIKit
 
 class HomeViewController: UIViewController {
-
+    var data = meterialData.shared.meterial
 
     @IBOutlet weak var mainTableView_custom: UITableView!
-    
-    let cellName:String = "mainTable_Cell"
-    let cellItem:Array<String> = ["딸기향","포도향","레몬향"]
-    let cellPercent:Array<String> = ["50%","30%","20%"]
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         print("hello ios")
@@ -24,7 +18,20 @@ class HomeViewController: UIViewController {
         mainTableView_custom.delegate = self
         mainTableView_custom.dataSource = self
 
+        
         // Do any additional setup after loading the view.
+    }
+    @IBOutlet weak var meterialTable: UITableView!
+    @IBAction func addCellButton(_ sender: UIButton) {
+        func makeNewCell(Name: String, Percent: Double) {
+            let addMeterial : [Meterial] = [Meterial(meterialName: Name, meterialIndex: 1, meterialPercent: Percent)]
+            data += addMeterial
+            mainTableView_custom.reloadData()
+            print("\(data)")
+        }
+        makeNewCell(Name: "포도향", Percent: 30)
+        print("버튼 누름")
+        
     }
     
     
@@ -43,14 +50,15 @@ class HomeViewController: UIViewController {
 
 extension HomeViewController: UITableViewDataSource, UITableViewDelegate{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return cellItem.count
+        return data.count
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let mainTable_Cell = mainTableView_custom.dequeueReusableCell(withIdentifier: cellName, for: indexPath) as! MainCell
-        
-        mainTable_Cell.itemName_custom.text = cellItem[indexPath.row]
-        mainTable_Cell.itemPercent_custom.text = cellPercent[indexPath.row]
+        let mainTable_Cell = mainTableView_custom.dequeueReusableCell(withIdentifier: "mainTable_Cell", for: indexPath) as! MainCell
+        let meterial = data[indexPath.row]
+        mainTable_Cell.itemName_custom.text = meterial.meterialName
+        mainTable_Cell.itemPercent_custom.text = "\(meterial.meterialPercent)"
         
         return mainTable_Cell
     }
