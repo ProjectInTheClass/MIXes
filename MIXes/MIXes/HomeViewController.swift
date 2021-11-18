@@ -21,13 +21,13 @@ class HomeViewController: UIViewController {
         
         // Do any additional setup after loading the view.
     }
-    @IBOutlet weak var meterialTable: UITableView!
+
     @IBAction func addCellButton(_ sender: UIButton) {
         func makeNewCell(Name: String, Percent: Double) {
             let addMeterial : [Meterial] = [Meterial(meterialName: Name, meterialIndex: 1, meterialPercent: Percent)]
             data += addMeterial
             mainTableView_custom.reloadData()
-            print("\(data)")
+            print("데이터 추가됨")
         }
         makeNewCell(Name: "포도향", Percent: 30)
         print("버튼 누름")
@@ -62,7 +62,17 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate{
         
         return mainTable_Cell
     }
-    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+            
+            if editingStyle == .delete {
+                
+                data.remove(at: indexPath.row)
+                tableView.deleteRows(at: [indexPath], with: .fade)
+                
+            } else if editingStyle == .insert {
+                
+            }
+        }
 
     
 }
